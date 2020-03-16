@@ -2,6 +2,8 @@ import React from 'react';
 import {Button} from '../Button/Button';
 import {Link} from '../Link/Link';
 import styled from 'styled-components';
+import Logo from '../../icons/drawmyCodeLogo.svg';
+import {Collapse} from 'reactstrap';
 
 const LogoBig = require( '../../images/LogoBig.svg' );
 
@@ -17,14 +19,19 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Presentation = () => (
+export const Presentation = (props) => (
   <Wrapper>
-    <img
-      className="logo"
-      src={LogoBig}
-      width={800}
-      alt="Draw my codDraw my code"
-    />
+    <Collapse isOpen={props.isMobile}>
+      <Logo className="logo" />
+    </Collapse>
+    <Collapse isOpen={!props.isMobile}>
+      <img
+        className="logo"
+        src={LogoBig}
+        width={800}
+        alt="Draw my codDraw my code"
+      />
+    </Collapse>
     <Link to="/episodes">
       <Button width="300px" className="start-button" >
         Start Reading

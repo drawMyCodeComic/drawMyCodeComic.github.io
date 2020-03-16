@@ -1,8 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
-import Image from "../components/image"
 import SEO from "../components/Seo/Seo"
-import {Col, Container, Row} from 'reactstrap';
+import {Container, Collapse} from 'reactstrap';
 import {PostList} from '../components/PostList/PostList';
 import {LandingSection} from '../components/LandingSection/LandingSection';
 import {Presentation} from '../components/Presentation/Presentation';
@@ -11,33 +10,37 @@ import {AboutDMC} from '../components/AboutDMC/AboutDMC';
 import { Element } from 'react-scroll';
 import {urls} from '../constants/landingUrls';
 import {Link} from '../components/Link/Link';
+import { useMediaQuery } from 'react-responsive';
 import _ from 'lodash';
 
 const IndexPage = (props) => {
     const posts = _.get(props, 'data.allMarkdownRemark.edges');
+    const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
     return (
       <Layout>
         <SEO title="Home" />
-          <Container>
+          <Container fluid="sm">
             <Element name={urls.HOME}>
               <LandingSection center height={800} top={40} bottom={40}>
-                <Presentation />
+                <Presentation isMobile={isMobile} />
               </LandingSection>
             </Element>
-            <Element name={urls.EPISODES}>
-              <LandingSection top={100} bottom={100}>
-                  <Title bottom={60} >Episodes</Title>
-                  <PostList posts={posts || []} />
-                  <Link to="/episodes" floatRight>
-                    More Episodes
-                  </Link>
-              </LandingSection>
-            </Element>
-            <Element name={urls.ABOUT}>
-              <LandingSection top={50} height={800} bottom={50}>
-                <AboutDMC />
-              </LandingSection>
-            </Element>
+            <Collapse isOpen={!isMobile}>
+                <Element name={urls.EPISODES}>
+                  <LandingSection top={100} bottom={100}>
+                      <Title bottom={60} >Episodes</Title>
+                      <PostList posts={(posts || []).slice(0, 6)} />
+                      <Link to="/episodes" size="md" floatRight>
+                        More Episodes
+                      </Link>
+                  </LandingSection>
+                </Element>
+                <Element name={urls.ABOUT}>
+                  <LandingSection center top={100} height={900} bottom={100}>
+                    <AboutDMC isMobile={isMobile} />
+                  </LandingSection>
+                </Element>
+            </Collapse>
           </Container>
       </Layout>
     )

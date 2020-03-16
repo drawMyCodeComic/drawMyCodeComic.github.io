@@ -1,15 +1,32 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import Layout from '../components/Layout/Layout'
+import { Post } from '../components/Post/Post'
+import SEO from '../components/Seo/Seo'
+import { LandingSection } from '../components/LandingSection/LandingSection'
+import { ContentNavigator } from '../components/ContentNavigator/ContentNavigator'
+import {Container} from 'reactstrap';
 
 class BlogPostTemplate extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
+    const post = this.props.data.markdownRemark; 
     return (
-      <div>
-        comic view
-      </div>
+      <Layout removeNavBar>
+        <LandingSection height={800} top={100} bottom={100}>
+          <SEO
+            title={post.frontmatter.title}
+            description={post.frontmatter.spoiler}
+            slug={post.fields.slug}
+          />
+          <Container fluid="sm">
+            <Post post={post} bottom={40} />
+            <ContentNavigator {...this.props.pageContext} />
+          </Container>
+        </LandingSection>
+      </Layout>
     )
   }
 }

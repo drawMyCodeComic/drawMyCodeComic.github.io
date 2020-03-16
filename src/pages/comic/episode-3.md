@@ -4,7 +4,7 @@ date: 2018-11-10
 path: "/comic/episode-1"
 featuredImage: ../../images/dmc-episode-1.png
 spoiler: Excepteur sint
-tags: ["webcomic", "comic"]
+tags: ["webcomic", "other"]
 ---
 
 ![Comic 1](../../images/dmc-episode-1.png)

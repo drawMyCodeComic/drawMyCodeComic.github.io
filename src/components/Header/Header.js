@@ -9,7 +9,6 @@ import {
   Navbar,
   Nav,
   NavItem,
-  NavLink,
   Row,
   Col,
   Collapse
@@ -17,6 +16,7 @@ import {
 import {urls} from '../../constants/landingUrls.js';
 import {Link as ScrollLink} from 'react-scroll';
 import {classNames} from '../../utils/classNames'
+import { useMediaQuery } from 'react-responsive';
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -37,19 +37,12 @@ const HeaderWrapper = styled.header`
     padding: 0px 40px;
   }
   .menu {
-    display: none;
     float: right;
   }
   @media(max-width: 800px) {
     height: 40px;
     .logo {
       width: 40px;
-    }
-    .menu {
-      display: block;
-    }
-    .navbar {
-      display: none;
     }
   }
   .reverse {
@@ -72,63 +65,82 @@ const HeaderWrapper = styled.header`
 const Header = (props) =>  {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [activated, setActivated] = useState(urls.HOME);
-  const socialNetworks = Object.keys(props.socialNetworks || {});
+  const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+  const socialNetworks = Object.keys(props.socialNetworks || {});
 
   return (
         <HeaderWrapper>
           <Container fluid={props.fluid || "sm"} >
             <Row>
-              <Col sm="2">
+              <Col sm="4" md="2" xs="6">
                 <Link to="/">
                   <Logo className="logo" alt="logo" />
                 </Link>
               </Col>
               <Col>
                 <div className="reverse vertical-center">
-                  <div className="menu">
-                      <IconButton>
-                        <Menu />
-                      </IconButton>
-                  </div>
+                    <Collapse isOpen={isMobile}>
+                      <div className="menu">
+                          <IconButton>
+                            <Menu />
+                          </IconButton>
+                      </div>
+                    </Collapse>
                     {
                       !props.removeNavBar && (
-                        <Navbar>
-                          <Nav className="mr-auto">
-                              {
-                                Object.keys(urls).map(name => (
-                                  <NavItem>
-                                    <ScrollLink
-                                      className={
-                                        classNames({
-                                          "landing-urls": true,
-                                          "active": activated === name
-                                        })
-                                      }
-                                      to={urls[name]}
-                                      spy={true}
-                                      smooth={true}
-                                      offset={0}
-                                      duration={500}
-                                      onSetActive={setActivated}
-                                      key={name}>
-                                      { name }
-                                    </ScrollLink>
-                                  </NavItem>
-                                ))
-                              }
-                              <NavItem >
-                                  <Link
-                                    to="/author"
-                                    className={classNames({
-                                      "landing-urls": true,
-                                    })}
-                                  >
-                                  AUTHOR
-                                </Link>
-                              </NavItem>
-                          </Nav>
-                        </Navbar>
+                        <Collapse isOpen={!isMobile}>
+                          <Navbar>
+                            <Nav className="mr-auto">
+                                {
+                                  Object.keys(urls).map(name => (
+                                    <NavItem>
+                                      <ScrollLink
+                                        className={
+                                          classNames({
+                                            "landing-urls": true,
+                                            "active": activated === name
+                                          })
+                                        }
+                                        to={urls[name]}
+                                        spy={true}
+                                        smooth={true}
+                                        offset={0}
+                                        duration={500}
+                                        onSetActive={setActivated}
+                                        key={name}>
+                                        { name }
+                                      </ScrollLink>
+                                    </NavItem>
+                                  ))
+                                }
+                                <NavItem >
+                                    <Link
+                                      to="/author"
+                                      className={classNames({
+                                        "landing-urls": true,
+                                      })}
+                                    >
+                                    AUTHOR
+                                  </Link>
+                                </NavItem>
+                            </Nav>
+                          </Navbar>
+                        </Collapse>
                       )
+                    }
+                    {
+                      props.removeNavBar && 
+                        (
+                          <Collapse isOpen={!isMobile}>
+                            <Navbar>
+                              <Nav className="mr-auto">
+                                <Link to="/" className="landing-urls">
+                                  HOME
+                                </Link>
+                              </Nav>
+                            </Navbar>
+                          </Collapse>
+                        )
                     }
                 </div>
               </Col>

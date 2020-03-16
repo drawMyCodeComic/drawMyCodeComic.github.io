@@ -1,5 +1,6 @@
 import React from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
+import _ from 'lodash';
 
 const query = graphql`
 query {
@@ -17,7 +18,7 @@ const AboutPage = () => {
     <StaticQuery
       query={query}
       render={data => {
-        const post = data.markdownRemark;
+        const post = _.get(data, 'markdownRemark');
         return (
             <>
                 <div className="article">
