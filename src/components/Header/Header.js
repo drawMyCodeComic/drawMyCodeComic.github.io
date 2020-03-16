@@ -18,6 +18,7 @@ import {urls} from '../../constants/landingUrls.js';
 import {Link as ScrollLink} from 'react-scroll';
 import {classNames} from '../../utils/classNames'
 import { useMediaQuery } from 'react-responsive';
+import { isMobileLib } from "react-device-detect";
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -66,7 +67,7 @@ const HeaderWrapper = styled.header`
 const Header = (props) =>  {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [activated, setActivated] = useState(urls.HOME);
-  const isMobile = useMediaQuery({ query: 'screen and (max-width: 800px)' });
+  const isMobile = useMediaQuery({ query: 'screen and (max-width: 800px)' }) || isMobileLib;
   const socialNetworks = Object.keys(props.socialNetworks || {});
 
   return (
