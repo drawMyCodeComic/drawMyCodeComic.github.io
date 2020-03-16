@@ -16,24 +16,32 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(40,40,40, 0.5);
+  background-color: rgba(40,40,40, 0.8);
   .crossIcon {
     position: absolute;
     left: 20px;
     top: 20px;
-    font-size: ${({ theme }) => theme.font.size.sm}
+    font-size: ${({ theme }) => theme.font.size.sm};
+    color: ${({ theme }) => theme.colorPalette.white};
   }
   .menu-container {
     a {
       display: block;
+      padding 10px 30px;
+      border: 1px solid ${({ theme }) => theme.colorPalette.white};
+      margin-bottom: 20px;
+      border-radius: 50%;
+      text-align: center;
       color: ${({ theme }) => theme.colorPalette.white};
       &:hover {
         color: ${({ theme }) => theme.colorPalette.darkBlue};
+        background: ${({ theme }) => theme.colorPalette.white};
       }
     }
   }
 `;
 const {EPISODES, ABOUT} = urls;
+const {INSTAGRAM, TWITTER} = socialNetworks.site;
 export const FixedMenu = (props) => {
   return props.open  ? (
     <Wrapper>
@@ -46,7 +54,13 @@ export const FixedMenu = (props) => {
         <Link to={EPISODES} >
           Episodes
         </Link>
-        <Link to={ABOUT} >
+        <a href={INSTAGRAM} target="_blank" >
+          Instagram
+        </a>
+        <a href={TWITTER} target="_blank" >
+          Twitter
+        </a>
+        <Link to={ABOUT}>
           About
         </Link>
         <Link to={AUTHOR} >

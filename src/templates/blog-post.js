@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout/Layout'
 import { Post } from '../components/Post/Post'
-import SEO from '../components/Seo/Seo'
+import SEO from '../components/Seo/seo'
 import { LandingSection } from '../components/LandingSection/LandingSection'
 import { ContentNavigator } from '../components/ContentNavigator/ContentNavigator'
 import {Container} from 'reactstrap';

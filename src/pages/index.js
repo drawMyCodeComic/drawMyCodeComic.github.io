@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
-import SEO from "../components/Seo/Seo"
+import SEO from "../components/Seo/seo"
 import {Container, Collapse} from 'reactstrap';
 import {PostList} from '../components/PostList/PostList';
 import {LandingSection} from '../components/LandingSection/LandingSection';

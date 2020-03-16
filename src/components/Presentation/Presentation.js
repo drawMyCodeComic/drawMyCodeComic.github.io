@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Logo from '../../icons/drawmyCodeLogo.svg';
 import {Collapse} from 'reactstrap';
 
-const LogoBig = require( '../../images/LogoBig.svg' );
+const LogoBig = require( '../../images/logoBig.svg' );
 
 const Wrapper = styled.div`
   .logo {

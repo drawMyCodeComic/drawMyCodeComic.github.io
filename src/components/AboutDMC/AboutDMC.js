@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     margin-bottom: 40px;
   }
 `;
-const LogoBig = require( '../../images/LogoBig.svg' );
+const LogoBig = require( '../../images/logoBig.svg' );
 
 export const AboutDMC = (props) => (
   <Wrapper>

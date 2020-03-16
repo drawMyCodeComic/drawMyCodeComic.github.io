@@ -10,7 +10,7 @@ export const socialNetworks = {
     INSTAGRAM: 'https://www.instagram.com/toonfranck',
   },
   site: {
-    INSTAGRAM: 'https://www.instagram.com/drawmy_code',
+    INSTAGRAM: 'https://www.instagram.com/draw_mycode',
     TWITTER: 'https://twitter.com/@drawMyCode',
   },
 }

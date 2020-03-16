@@ -4,12 +4,14 @@ import Layout from '../components/Layout/Layout';
 import { PostList } from '../components/PostList/PostList';
 import { LandingSection } from '../components/LandingSection/LandingSection';
 import { Container } from 'reactstrap';
+import SEO from "../components/Seo/seo";
 import _ from 'lodash';
 
 const EpisodesPage = (props) => {
   const posts = _.get(props, 'data.allMarkdownRemark.edges');
   return (
     <Layout>
+      <SEO title="Author" />
       <LandingSection height={800} top={100} bottom={40}>
         <Container fluid="sm">
           <PostList posts={(posts || []).slice(0, 6)} />
