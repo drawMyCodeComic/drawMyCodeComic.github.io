@@ -12,6 +12,7 @@ const Wrapper = styled.div`
     margin: auto;
     display: block;
     margin-bottom: 150px;
+    max-width: 100%;
   }
   .start-button {
     display: block;
