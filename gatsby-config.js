@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Draw My Code WebComic`,
     author: 'erifranckn',
-    description: 'Template for webcomics / artwork',
+    description: 'The draw my code is a webcomic where you can find stories about programming life',
     siteUrl: 'https://github.com/JLDevOps/gatsby-starter-webcomic',
     image: `src//images/logo_largo.png`,
     social: {
