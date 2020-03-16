@@ -5,11 +5,12 @@ import { Text } from '../components/Text/Text';
 import {Row, Col, Container} from 'reactstrap';
 import { useMediaQuery } from 'react-responsive';
 import {socialNetworks} from '../constants/socialNetworks';
+import SEO from "../components/Seo/seo";
 
 const avatar = require("../images/avatar.png");
 const avatar2 = require("../images/avatar-2.png");
 const Wrapper = styled.div`
-  height: calc(100vh - 200px);
+  min-height: calc(100vh - 200px);
   .avatar {
     max-width: 100%;
   }
@@ -35,6 +36,7 @@ const AuthorPage = () =>  {
   const {GITHUB, TWITTER, INSTAGRAM, FACEBOOK} = socialNetworks.author;
   return (
     <Layout fluid removeNavBar>
+      <SEO title="Author" />
       <Wrapper>
         <Container fluid>
           <Row>
