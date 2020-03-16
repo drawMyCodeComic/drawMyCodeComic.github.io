@@ -43,27 +43,28 @@ const Wrapper = styled.div`
 const {EPISODES, ABOUT} = urls;
 const {INSTAGRAM, TWITTER} = socialNetworks.site;
 export const FixedMenu = (props) => {
+  const closeModal = () => props.onClose(false);
   return props.open  ? (
     <Wrapper>
       <FontAwesomeIcon
         icon={faTimes}
         className="crossIcon"
-        onClick={() => props.onClose(false)}
+        onClick={closeModal}
       />
       <div className="menu-container">
-        <Link to={EPISODES} >
+        <Link to={EPISODES} onClick={closeModal} >
           Episodes
         </Link>
-        <a href={INSTAGRAM} target="_blank" >
+        <a href={INSTAGRAM} target="_blank" onClick={closeModal}>
           Instagram
         </a>
-        <a href={TWITTER} target="_blank" >
+        <a href={TWITTER} target="_blank" onClick={closeModal}>
           Twitter
         </a>
-        <Link to={ABOUT}>
+        <Link to={ABOUT} onClick={closeModal}>
           About
         </Link>
-        <Link to={AUTHOR} >
+        <Link to={AUTHOR} onClick={closeModal}>
           Author
         </Link>
       </div>
