@@ -4,7 +4,7 @@ module.exports = {
     author: 'erifranckn',
     description: 'Template for webcomics / artwork',
     siteUrl: 'https://github.com/JLDevOps/gatsby-starter-webcomic',
-    image: 'src//images/logo_largo.png',
+    image: `src//images/logo_largo.png`,
     social: {
       instagram: 'https://instagram.com/@draw_mycode',
       facebook: 'https://facebook.com/erifranckn',
