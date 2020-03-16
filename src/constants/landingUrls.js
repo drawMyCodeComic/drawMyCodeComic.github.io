@@ -3,3 +3,5 @@ export const urls = {
   EPISODES: 'episodes',
   ABOUT: 'about',
 }
+
+export const AUTHOR = '/author';

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
 import {IconButton} from '../IconButton/IconButton';
+import {FixedMenu} from '../FixedMenu/FixedMenu';
 import Menu from '../../icons/menuIcon.svg';
 import Logo from '../../icons/drawmyCodeLogo.svg';
 import {
@@ -70,6 +71,7 @@ const Header = (props) =>  {
 
   return (
         <HeaderWrapper>
+          <FixedMenu open={toggleMenu} onClose={setToggleMenu} />
           <Container fluid={props.fluid || "sm"} >
             <Row>
               <Col sm="4" md="2" xs="6">
@@ -81,7 +83,7 @@ const Header = (props) =>  {
                 <div className="reverse vertical-center">
                     <Collapse isOpen={isMobile}>
                       <div className="menu">
-                          <IconButton>
+                          <IconButton onClick={() => setToggleMenu(true)}>
                             <Menu />
                           </IconButton>
                       </div>
