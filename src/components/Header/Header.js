@@ -43,7 +43,7 @@ const HeaderWrapper = styled.header`
   }
   @media(max-width: 800px) {
     height: 40px;
-    .navBar {
+    .navbar {
       display: none;
     }
     .logo {
@@ -94,7 +94,7 @@ const Header = (props) =>  {
                     </Collapse>
                     {
                       !props.removeNavBar && (
-                        <Collapse isOpen={!isMobile} className="navBar">
+                        <Collapse isOpen={!isMobile}>
                           <Navbar>
                             <Nav className="mr-auto">
                                 {
