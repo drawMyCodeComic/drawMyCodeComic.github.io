@@ -15,7 +15,7 @@ import _ from 'lodash';
 
 const IndexPage = (props) => {
     const posts = _.get(props, 'data.allMarkdownRemark.edges');
-    const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+    const isMobile = useMediaQuery({ query: 'screen and (max-width: 800px)' });
     return (
       <Layout>
         <SEO title="Home" />
