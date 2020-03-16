@@ -17,6 +17,7 @@ class BlogPostTemplate extends React.Component {
       <Layout removeNavBar>
         <LandingSection height={800} top={100} bottom={100}>
           <SEO
+            image={post.frontmatter.featuredImage}
             title={post.frontmatter.title}
             description={post.frontmatter.spoiler}
             slug={post.fields.slug}
