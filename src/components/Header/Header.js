@@ -67,7 +67,7 @@ const HeaderWrapper = styled.header`
 const Header = (props) =>  {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [activated, setActivated] = useState(urls.HOME);
-  const isMobile = useMediaQuery({ query: 'screen and (max-width: 800px)' }) || isMobileLib;
+  const isMobile = useMediaQuery({ query: '(max-width: 800px)' }) || isMobileLib;
   const socialNetworks = Object.keys(props.socialNetworks || {});
 
   return (
