@@ -1,41 +1,33 @@
 import React from 'react';
-import Img from "gatsby-image"
 import {Link} from 'gatsby';
 import {Col, Row} from 'reactstrap';
+import {Card, CardImage} from '../Card/Card';
+import _ from 'lodash';
 
-export const PostList = ({posts}) => (
-    <Row>
+export const PostList = ({posts, className}) => (
+    <Row className={className}>
       {
         posts.map(({ node }) => {
           const title = _.get(node, 'frontmatter.title') || node.fields.slug;
           let featuredImgFluid = _.get(node, 'frontmatter.featuredImage.childImageSharp.fluid');
-          let postTitle;
-          let imageQuery = "";
-          if(featuredImgFluid) {
-            postTitle = "";
-            imageQuery = <Link to={node.fields.slug}><Img fluid={featuredImgFluid} /></Link>
-          } else {
-            postTitle = <h2><Link to={node.fields.slug}>{title}</Link></h2>;
-          };
         return (
             <Col md="6" sm="12" lg="4" >
-              <div className="post" key={node.fields.slug}>
-                {postTitle}
-                {imageQuery}
-                <p className="subtitle">
-                  <br></br>
-                  <h5>{node.frontmatter.date}</h5>
-                  {node.frontmatter.tags &&
-                    node.frontmatter.tags.map(tag => (
-                      <span key={tag} className="subtitle-tag">
-                        <Link to={'/tags/' + tag.toLowerCase()}>#{tag}</Link>
-                      </span>
-                    ))}
-                </p>
-                <p
-                  dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}
-                />
-              </div>
+                <Card
+                  title={title}
+                  className="post"
+                  bottom={50}
+                  key={node.fields.slug}
+                  tags={node.frontmatter.tags || []}
+                  date={node.frontmatter.date}
+                >
+                  {
+                    featuredImgFluid && (
+                      <Link to={node.fields.slug}>
+                        <CardImage fluid={featuredImgFluid} />
+                      </Link>
+                    )
+                  }
+                </Card>
             </Col>
           );
         })

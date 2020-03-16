@@ -13,9 +13,17 @@ import {
   Row,
   Col,
   Collapse
-} from 'reactstrap'
+} from 'reactstrap';
+import {urls} from '../../constants/landingUrls.js';
+import {Link as ScrollLink} from 'react-scroll';
+import {classNames} from '../../utils/classNames'
 
 const HeaderWrapper = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: ${({theme}) => theme.colorPalette.white};
   width: 100%;
   box-shadow: 0px 0px 7px #00000029;
   height: 70px;
@@ -24,6 +32,9 @@ const HeaderWrapper = styled.header`
   align-items: center;
   .logo {
     width: 60px;
+  }
+  .container-fluid {
+    padding: 0px 40px;
   }
   .menu {
     display: none;
@@ -41,21 +52,31 @@ const HeaderWrapper = styled.header`
       display: none;
     }
   }
-  .nav-link {
-
-  }
   .reverse {
     flex-direction: row-reverse;
+  }
+  .landing-urls {
+    padding: 10px;
+    color: ${({theme}) => theme.colorPalette.lightGray};
+    &.active {
+      color: ${({theme}) => theme.colorPalette.darkBlue};
+    }
+  }
+  .vertical-center {
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 `;
 
 const Header = (props) =>  {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [activated, setActivated] = useState(urls.HOME);
   const socialNetworks = Object.keys(props.socialNetworks || {});
 
   return (
         <HeaderWrapper>
-          <Container fluid="sm" >
+          <Container fluid={props.fluid || "sm"} >
             <Row>
               <Col sm="2">
                 <Link to="/">
@@ -63,26 +84,53 @@ const Header = (props) =>  {
                 </Link>
               </Col>
               <Col>
-                <Row className="reverse">
-                  <div class="menu">
+                <div className="reverse vertical-center">
+                  <div className="menu">
                       <IconButton>
                         <Menu />
                       </IconButton>
                   </div>
-                    <Navbar>
-                      <Nav className="mr-auto">
-                          {
-                            socialNetworks.map(item => (
-                              <NavItem>
-                                <NavLink href={props.socialNetworks[item]} key={item}>
-                                  { item }
-                                </NavLink>
+                    {
+                      !props.removeNavBar && (
+                        <Navbar>
+                          <Nav className="mr-auto">
+                              {
+                                Object.keys(urls).map(name => (
+                                  <NavItem>
+                                    <ScrollLink
+                                      className={
+                                        classNames({
+                                          "landing-urls": true,
+                                          "active": activated === name
+                                        })
+                                      }
+                                      to={urls[name]}
+                                      spy={true}
+                                      smooth={true}
+                                      offset={0}
+                                      duration={500}
+                                      onSetActive={setActivated}
+                                      key={name}>
+                                      { name }
+                                    </ScrollLink>
+                                  </NavItem>
+                                ))
+                              }
+                              <NavItem >
+                                  <Link
+                                    to="/author"
+                                    className={classNames({
+                                      "landing-urls": true,
+                                    })}
+                                  >
+                                  AUTHOR
+                                </Link>
                               </NavItem>
-                            ))
-                          }
-                      </Nav>
-                    </Navbar>
-                  </Row>
+                          </Nav>
+                        </Navbar>
+                      )
+                    }
+                </div>
               </Col>
             </Row>
           </Container>
