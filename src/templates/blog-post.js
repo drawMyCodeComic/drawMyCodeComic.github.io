@@ -6,6 +6,7 @@ import SEO from '../components/Seo/seo'
 import { LandingSection } from '../components/LandingSection/LandingSection'
 import { ContentNavigator } from '../components/ContentNavigator/ContentNavigator'
 import {Container} from 'reactstrap';
+import _ from 'lodash';
 
 class BlogPostTemplate extends React.Component {
   constructor(props) {
@@ -13,11 +14,13 @@ class BlogPostTemplate extends React.Component {
   }
   render() {
     const post = this.props.data.markdownRemark; 
+    const image = _.get(post, 'frontmatter.featuredImage.childImageSharp.fluid.base64');
+    console.log(image)
     return (
       <Layout removeNavBar>
         <LandingSection height={800} top={100} bottom={100}>
           <SEO
-            image={post.frontmatter.featuredImage}
+            image={image}
             title={post.frontmatter.title}
             description={post.frontmatter.spoiler}
             slug={post.fields.slug}
