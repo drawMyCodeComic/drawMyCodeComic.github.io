@@ -32,7 +32,6 @@ module.exports = {
         pageTransitionDelay: 0,
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: "drawmy.codes",
       },
     },
     `gatsby-plugin-styled-components`,
