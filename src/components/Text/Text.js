@@ -13,6 +13,9 @@ export const Title = styled.h1`
   text-align: ${({align}) => align || 'center'};
   color: ${({color, theme}) => theme.colorPalette[color || 'darkBlue']};
   margin-bottom: ${({bottom}) => bottom || 10}px;
+  @media (max-width: 800px) {
+    font-size: ${({theme}) => theme.font.size.lg};
+  }
 `
 
 export const SubTitle = styled.h2`
@@ -20,4 +23,7 @@ export const SubTitle = styled.h2`
   text-align: ${({align}) => align || 'center'};
   color: ${({color, theme}) => theme.colorPalette[color || 'darkBlue']};
   margin-bottom: ${({bottom}) => bottom || 10}px;
+  @media (max-width: 800px) {
+    font-size: ${({theme}) => theme.font.size.md};
+  }
 `
