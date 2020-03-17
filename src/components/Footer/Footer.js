@@ -16,7 +16,7 @@ const FooterWrapper = styled.footer`
 
 export const Footer = () => (
   <FooterWrapper>
-    <Text size="md" color="lightGray">
+    <Text size="sm" color="lightGray">
       © Powered by <a target="_blank" href="https://instagram.com/toonfranck">@toonfranck</a>
     </Text>
   </FooterWrapper>
