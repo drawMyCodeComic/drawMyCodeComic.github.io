@@ -1,10 +1,10 @@
 ---
 title: EPISODE 1 Hello World
-date: 2018-11-10
+date: 2020-03-16
 path: "/comic/episode-1"
 featuredImage: ../../images/dmc-episode-1.png
 spoiler: How we start learning programming
-tags: ["webcomic", "comic"]
+tags: ["webcomic", "comic", "learning", "javascript"]
 ---
 
 ![Comic 1](../../images/dmc-episode-1.png)

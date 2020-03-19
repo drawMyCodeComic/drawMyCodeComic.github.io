@@ -1,10 +1,10 @@
 ---
-title: EPISODE 1 Hello World
-date: 2018-11-10
-path: "/comic/episode-1"
+title: EPISODE 2 My first Interview
+date: 2020-03-18
+path: "/comic/episode-2"
 featuredImage: ../../images/dmc-episode2-cover.png
-spoiler: How we start learning programming
-tags: ["webcomic", "comic"]
+spoiler: When you receive your first interview with a crazy company
+tags: ["webcomic", "comic", "interview"]
 ---
 
 ![Comic 1](../../images/dmc-episode-2.png)
