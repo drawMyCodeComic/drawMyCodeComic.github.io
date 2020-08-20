@@ -1,6 +1,6 @@
 export const theme = {
   font: {
-    family: 'Chalkboard',
+    family: 'Ramesant',
     size: {
       xs: '14px',
       sm: '18px',

@@ -15,6 +15,10 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import {theme} from '../../constants/theme';
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: Ramesant;
+    src: url(${ require('../../fonts/ramesant.otf') });
+  }
   * {
     font-family: ${({theme}) => theme.font.family};
   }
