@@ -11,7 +11,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Logo = require( '../../images/logo1.png' );
+const Logo = require( '../../images/logo1.svg' );
 function SEO({ description, lang, meta, title, image }) {
   const { site } = useStaticQuery(
     graphql`
