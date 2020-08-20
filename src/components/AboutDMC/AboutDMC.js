@@ -44,7 +44,7 @@ export const AboutDMC = (props) => (
         <Text size="md" align="justify" >
           Enjoy this webcomic and if you want to tell me your
           own history please write to this email
-          <Text size="md" color="darkgreen" isBlock={false}> stories@drawmy.codes </Text> i want to read it.
+          <Text size="md" color="darkgreen" isBlock={false}> erifranckjose@gmail.com </Text> i want to read it.
         </Text>
       </Col>
     </Row>
