@@ -14,7 +14,7 @@ const EpisodesPage = (props) => {
       <SEO title="Episodes" />
       <LandingSection height={800} top={100} bottom={40}>
         <Container fluid="sm">
-          <PostList posts={(posts || []).slice(0, 6)} />
+          <PostList posts={posts || []} />
         </Container>
       </LandingSection>
     </Layout>
