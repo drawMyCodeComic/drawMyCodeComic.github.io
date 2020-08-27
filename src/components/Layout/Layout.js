@@ -17,7 +17,7 @@ import {theme} from '../../constants/theme';
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: Ramesant;
-    src: url(${ require('../../fonts/ramesant.otf') });
+    src: url(${ require('../../fonts/Ramesant.otf') });
   }
   * {
     font-family: ${({theme}) => theme.font.family};
