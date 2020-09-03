@@ -7,4 +7,4 @@ spoiler: When you have to deploy on friday
 tags: ["webcomic", "coding", "works"]
 ---
 
-![Comic 6](../../images/dmc-episode-7.png)
+![Comic 7](../../images/dmc-episode-7.png)

@@ -1,5 +1,5 @@
 ---
-title: EPISODE 6 Programmer Free Time
+title: EPISODE 6 Deployment
 date: 2020-08-19
 path: "/comic/episode-6"
 featuredImage: ../../images/dmc-episode6-cover.png
