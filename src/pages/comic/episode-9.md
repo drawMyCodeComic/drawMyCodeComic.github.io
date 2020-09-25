@@ -7,4 +7,4 @@ spoiler: When you request for help and you resolve the issue just telling about 
 tags: ["webcomic", "pair programming"]
 ---
 
-![Comic 8](../../images/dmc-episode-8.png)
+![Comic 8](../../images/dmc-episode-9.png)
