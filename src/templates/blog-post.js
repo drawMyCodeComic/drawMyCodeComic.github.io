@@ -15,7 +15,6 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark; 
     const image = _.get(post, 'frontmatter.featuredImage.childImageSharp.fluid.base64');
-    console.log(image)
     return (
       <Layout removeNavBar>
         <LandingSection height={800} top={100} bottom={100}>

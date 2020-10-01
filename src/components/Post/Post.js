@@ -11,6 +11,9 @@ export const Article = styled.div`
     display: block;
     margin: auto;
   }
+  img {
+    max-width: 100%;
+  }
   .tags {
     float: right;
     .tag {
