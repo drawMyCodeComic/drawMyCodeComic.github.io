@@ -1,20 +1,20 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout/Layout'
-import { Post } from '../components/Post/Post'
-import SEO from '../components/Seo/seo'
-import { LandingSection } from '../components/LandingSection/LandingSection'
-import { ContentNavigator } from '../components/ContentNavigator/ContentNavigator'
-import {Container} from 'reactstrap';
-import _ from 'lodash';
+import React from "react"
+import { graphql, Link } from "gatsby"
+import Layout from "../components/Layout/Layout"
+import { Post } from "../components/Post/Post"
+import SEO from "../components/Seo/seo"
+import { LandingSection } from "../components/LandingSection/LandingSection"
+import { ContentNavigator } from "../components/ContentNavigator/ContentNavigator"
+import { Container } from "reactstrap"
+import _ from "lodash"
 
 class BlogPostTemplate extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
-    const post = this.props.data.markdownRemark; 
-    const image = _.get(post, 'frontmatter.featuredImage.childImageSharp.fluid.base64');
+    const post = this.props.data.markdownRemark
+    const image = _.get(
+      post,
+      "frontmatter.featuredImage.childImageSharp.fluid.base64"
+    )
     return (
       <Layout removeNavBar>
         <LandingSection height={800} top={100} bottom={100}>
@@ -34,7 +34,7 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default  BlogPostTemplate;
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -66,4 +66,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

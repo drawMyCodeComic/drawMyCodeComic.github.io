@@ -1,25 +1,26 @@
 module.exports = {
   siteMetadata: {
     title: `Draw My Code WebComic`,
-    author: 'erifranckn',
-    description: 'The draw my code is a webcomic where you can find stories about programming life',
-    siteUrl: 'https://github.com/JLDevOps/gatsby-starter-webcomic',
+    author: "erifranckn",
+    description:
+      "The draw my code is a webcomic where you can find stories about programming life",
+    siteUrl: "https://github.com/JLDevOps/gatsby-starter-webcomic",
     image: `src//images/logo_largo.png`,
     social: {
-      instagram: 'https://instagram.com/@draw_mycode',
-      facebook: 'https://facebook.com/erifranckn',
-      twitter: 'https://twitter.com/erifranckn',
-      github: 'https://github.com/drawMyCodeComic',
+      instagram: "https://instagram.com/@draw_mycode",
+      facebook: "https://facebook.com/erifranckn",
+      twitter: "https://twitter.com/erifranckn",
+      github: "https://github.com/drawMyCodeComic",
     },
   },
-  pathPrefix: '/',
+  pathPrefix: "/",
   plugins: [
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /icons/ // See below to configure properly
-        }
+          include: /icons/, // See below to configure properly
+        },
       },
     },
     {
@@ -59,9 +60,9 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
-                });
-              });
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
             },
             query: `
               {
@@ -82,13 +83,13 @@ module.exports = {
                 }
               }
             `,
-            output: '/rss.xml',
-            title: 'RSS Feed of gatsby-starter-webcomic',
+            output: "/rss.xml",
+            title: "RSS Feed of gatsby-starter-webcomic",
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of
             // current page satisfied this regular expression;
             // if not provided or `undefined`, all pages will have feed reference inserted
-            match: '^/post/',
+            match: "^/post/",
           },
         ],
       },
@@ -96,7 +97,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-json`,
       options: {
-        path: './src/pages/_data',
+        path: "./src/pages/_data",
       },
     },
     {
@@ -128,13 +129,13 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: "gatsby-remark-prismjs",
             options: {
-              inlineCodeMarker: '÷',
+              inlineCodeMarker: "÷",
             },
           },
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants",
         ],
       },
     },
@@ -188,9 +189,8 @@ module.exports = {
           },
         },
         // Optional filter to limit indexed nodes
-        filter: (node, getNode) =>
-          node.frontmatter.tags !== 'exempt',
+        filter: (node, getNode) => node.frontmatter.tags !== "exempt",
       },
-    },
+    }
   ],
-};
+}

@@ -11,18 +11,18 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../Header/Header"
 import { Footer } from "../Footer/Footer"
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import {theme} from '../../constants/theme';
+import { createGlobalStyle, ThemeProvider } from "styled-components"
+import { theme } from "../../constants/theme"
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: Ramesant;
-    src: url(${ require('../../fonts/Ramesant.otf') });
+    src: url(${require("../../fonts/Ramesant.otf")});
   }
   * {
-    font-family: ${({theme}) => theme.font.family};
+    font-family: ${({ theme }) => theme.font.family};
   }
-`;
+`
 
 const Layout = ({ children, fluid, removeNavBar }) => {
   const data = useStaticQuery(graphql`
@@ -40,7 +40,7 @@ const Layout = ({ children, fluid, removeNavBar }) => {
       <GlobalStyle />
       <Header fluid={fluid} removeNavBar={removeNavBar} />
       <main>{children}</main>
-      <Footer/>
+      <Footer />
     </ThemeProvider>
   )
 }

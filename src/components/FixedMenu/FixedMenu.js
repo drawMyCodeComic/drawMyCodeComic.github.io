@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import {Link} from 'gatsby';
-import {urls, AUTHOR} from '../../constants/landingUrls';
-import {socialNetworks} from '../../constants/socialNetworks';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import React from "react"
+import styled from "styled-components"
+import { Link } from "gatsby"
+import { urls, AUTHOR } from "../../constants/landingUrls"
+import { socialNetworks } from "../../constants/socialNetworks"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
 const Wrapper = styled.div`
   position: fixed;
@@ -39,12 +39,12 @@ const Wrapper = styled.div`
       }
     }
   }
-`;
-const {EPISODES, ABOUT} = urls;
-const {INSTAGRAM, TWITTER} = socialNetworks.site;
-export const FixedMenu = (props) => {
-  const closeModal = () => props.onClose(false);
-  return props.open  ? (
+`
+const { EPISODES, ABOUT } = urls
+const { INSTAGRAM, TWITTER } = socialNetworks.site
+export const FixedMenu = props => {
+  const closeModal = () => props.onClose(false)
+  return props.open ? (
     <Wrapper>
       <FontAwesomeIcon
         icon={faTimes}
@@ -52,7 +52,7 @@ export const FixedMenu = (props) => {
         onClick={closeModal}
       />
       <div className="menu-container">
-        <Link to={EPISODES} onClick={closeModal} >
+        <Link to={EPISODES} onClick={closeModal}>
           Episodes
         </Link>
         <a href={INSTAGRAM} target="_blank" onClick={closeModal}>
@@ -69,5 +69,5 @@ export const FixedMenu = (props) => {
         </Link>
       </div>
     </Wrapper>
-  ) : null;
-};
+  ) : null
+}

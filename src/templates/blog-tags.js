@@ -1,14 +1,14 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Layout from '../components/Layout/Layout';
-import { PostList } from '../components/PostList/PostList';
-import { LandingSection } from '../components/LandingSection/LandingSection';
-import { Container } from 'reactstrap';
-import _ from 'lodash';
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout/Layout"
+import { PostList } from "../components/PostList/PostList"
+import { LandingSection } from "../components/LandingSection/LandingSection"
+import { Container } from "reactstrap"
+import _ from "lodash"
 
 export default class BlogTags extends React.Component {
-  render () {
-    const posts = _.get(this.props, 'data.allMarkdownRemark.edges');
+  render() {
+    const posts = _.get(this.props, "data.allMarkdownRemark.edges")
     return (
       <Layout>
         <LandingSection height={800} top={100} bottom={40}>
@@ -49,4 +49,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

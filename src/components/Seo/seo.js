@@ -11,7 +11,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Logo = require( '../../images/logo1.svg' );
+const Logo = require("../../images/logo1.svg")
 function SEO({ description, lang, meta, title, image }) {
   const { site } = useStaticQuery(
     graphql`
@@ -29,7 +29,7 @@ function SEO({ description, lang, meta, title, image }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const metaImage = image || Logo ;
+  const metaImage = image || Logo
 
   return (
     <Helmet

@@ -1,9 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import Logo from '../../icons/drawmyCodeLogo.svg';
-import {Text} from '../Text/Text';
-import {Row, Col, Collapse} from 'reactstrap';
-
+import React from "react"
+import styled from "styled-components"
+import Logo from "../../icons/drawmyCodeLogo.svg"
+import { Text } from "../Text/Text"
+import { Row, Col, Collapse } from "reactstrap"
 
 const Wrapper = styled.div`
   .separation-left {
@@ -14,10 +13,10 @@ const Wrapper = styled.div`
     max-width: 100%;
     margin-bottom: 40px;
   }
-`;
-const LogoBig = require( '../../images/logoBig.svg' );
+`
+const LogoBig = require("../../images/logoBig.svg")
 
-export const AboutDMC = (props) => (
+export const AboutDMC = props => (
   <Wrapper>
     <Row>
       <Col md={5}>
@@ -33,20 +32,24 @@ export const AboutDMC = (props) => (
           />
         </Collapse>
       </Col>
-      <Col className="separation-left" >
+      <Col className="separation-left">
         <Text size="md" bottom={60} align="justify">
-          The draw my code is a web comic created by @erifranckn
-          where you can find histories related with the programmer
-          life and experiences, here you can learn about technical
-          things or just get fun about this Wonderful job.
+          The draw my code is a web comic created by @erifranckn where you can
+          find histories related with the programmer life and experiences, here
+          you can learn about technical things or just get fun about this
+          Wonderful job.
         </Text>
 
-        <Text size="md" align="justify" >
-          Enjoy this webcomic and if you want to tell me your
-          own history please write to this email
-          <Text size="md" color="darkgreen" isBlock={false}> erifranckjose@gmail.com </Text> i want to read it.
+        <Text size="md" align="justify">
+          Enjoy this webcomic and if you want to tell me your own history please
+          write to this email
+          <Text size="md" color="darkgreen" isBlock={false}>
+            {" "}
+            erifranckjose@gmail.com{" "}
+          </Text>{" "}
+          i want to read it.
         </Text>
       </Col>
     </Row>
   </Wrapper>
-);
+)

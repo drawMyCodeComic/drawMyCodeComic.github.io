@@ -1,14 +1,14 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Layout from '../components/Layout/Layout';
-import { PostList } from '../components/PostList/PostList';
-import { LandingSection } from '../components/LandingSection/LandingSection';
-import { Container } from 'reactstrap';
-import SEO from "../components/Seo/seo";
-import _ from 'lodash';
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout/Layout"
+import { PostList } from "../components/PostList/PostList"
+import { LandingSection } from "../components/LandingSection/LandingSection"
+import { Container } from "reactstrap"
+import SEO from "../components/Seo/seo"
+import _ from "lodash"
 
-const EpisodesPage = (props) => {
-  const posts = _.get(props, 'data.allMarkdownRemark.edges');
+const EpisodesPage = props => {
+  const posts = _.get(props, "data.allMarkdownRemark.edges")
   return (
     <Layout>
       <SEO title="Episodes" />
@@ -21,23 +21,26 @@ const EpisodesPage = (props) => {
   )
 }
 
-export default EpisodesPage;
+export default EpisodesPage
 
 export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
-        description,
+        description
         social {
-          facebook,
-          instagram,
-          twitter,
+          facebook
+          instagram
+          twitter
           github
         }
       }
     }
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {title: {ne: "About"}}}) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { title: { ne: "About" } } }
+    ) {
       edges {
         node {
           fields {
@@ -59,4 +62,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

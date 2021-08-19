@@ -1,11 +1,11 @@
-import React from 'react';
-import {Button} from '../Button/Button';
-import {Link} from '../Link/Link';
-import styled from 'styled-components';
-import Logo from '../../icons/drawmyCodeLogo.svg';
-import {Collapse} from 'reactstrap';
+import React from "react"
+import { Button } from "../Button/Button"
+import { Link } from "../Link/Link"
+import styled from "styled-components"
+import Logo from "../../icons/drawmyCodeLogo.svg"
+import { Collapse } from "reactstrap"
 
-const LogoBig = require( '../../images/logoBig.svg' );
+const LogoBig = require("../../images/logoBig.svg")
 
 const Wrapper = styled.div`
   .logo {
@@ -18,9 +18,9 @@ const Wrapper = styled.div`
     display: block;
     margin: auto;
   }
-`;
+`
 
-export const Presentation = (props) => (
+export const Presentation = props => (
   <Wrapper>
     <Collapse isOpen={props.isMobile}>
       <Logo className="logo" />
@@ -34,9 +34,9 @@ export const Presentation = (props) => (
       />
     </Collapse>
     <Link to="/episodes">
-      <Button width="300px" className="start-button" >
+      <Button width="300px" className="start-button">
         Start Reading
       </Button>
     </Link>
   </Wrapper>
-);
+)

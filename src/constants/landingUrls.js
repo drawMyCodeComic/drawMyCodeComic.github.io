@@ -1,7 +1,7 @@
 export const urls = {
-  HOME: 'home',
-  EPISODES: 'episodes',
-  ABOUT: 'about',
+  HOME: "home",
+  EPISODES: "episodes",
+  ABOUT: "about",
 }
 
-export const AUTHOR = '/author';
+export const AUTHOR = "/author"

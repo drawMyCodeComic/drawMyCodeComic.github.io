@@ -1,14 +1,14 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Layout from '../components/Layout/Layout';
-import { AboutDMC } from '../components/AboutDMC/AboutDMC';
-import { LandingSection } from '../components/LandingSection/LandingSection';
-import { Container } from 'reactstrap';
-import { useMediaQuery } from 'react-responsive';
-import SEO from "../components/Seo/seo";
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout/Layout"
+import { AboutDMC } from "../components/AboutDMC/AboutDMC"
+import { LandingSection } from "../components/LandingSection/LandingSection"
+import { Container } from "reactstrap"
+import { useMediaQuery } from "react-responsive"
+import SEO from "../components/Seo/seo"
 
 const AboutPage = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+  const isMobile = useMediaQuery({ query: "(max-width: 800px)" })
   return (
     <Layout>
       <SEO title="About" />
@@ -21,4 +21,4 @@ const AboutPage = () => {
   )
 }
 
-export default AboutPage;
+export default AboutPage
