@@ -8,9 +8,10 @@ module.exports = {
     image: `src//images/logo_largo.png`,
     social: {
       instagram: "https://instagram.com/@draw_mycode",
+      instagramAuthor: "https://instagram.com/erifranck",
       facebook: "https://facebook.com/erifranckn",
       twitter: "https://twitter.com/erifranckn",
-      github: "https://github.com/drawMyCodeComic",
+      github: "https://github.com/erifranck",
     },
   },
   pathPrefix: "/",
@@ -191,6 +192,19 @@ module.exports = {
         // Optional filter to limit indexed nodes
         filter: (node, getNode) => node.frontmatter.tags !== "exempt",
       },
-    }
+    },
+    {
+      resolve: `gatsby-theme-i18n`,
+      options: {
+        defaultLang: `es`,
+        configPath: require.resolve(`./src/i18n/config.json`),
+      },
+    },
+    {
+      resolve: `gatsby-theme-i18n-react-intl`,
+      options: {
+        defaultLocale: `./src/i18n/react-intl/es.json`,
+      },
+    },
   ],
 }

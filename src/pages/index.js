@@ -11,6 +11,7 @@ import { Element } from "react-scroll"
 import { urls } from "../constants/landingUrls"
 import { Link } from "../components/Link/Link"
 import { useMediaQuery } from "react-responsive"
+import reactintl from "gatsby-theme-i18n-react-intl"
 import _ from "lodash"
 
 const IndexPage = props => {
@@ -49,7 +50,7 @@ const IndexPage = props => {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query {
+  query($locale: String!) {
     site {
       siteMetadata {
         title
@@ -64,7 +65,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { title: { ne: "About" } } }
+      filter: { frontmatter: { lan: {eq: $locale} } }
     ) {
       edges {
         node {

@@ -6,26 +6,26 @@ import { LandingSection } from "../components/LandingSection/LandingSection"
 import { Container } from "reactstrap"
 import _ from "lodash"
 
-export default class BlogTags extends React.Component {
-  render() {
-    const posts = _.get(this.props, "data.allMarkdownRemark.edges")
-    return (
-      <Layout>
-        <LandingSection height={800} top={100} bottom={40}>
-          <Container fluid="sm">
-            <PostList posts={posts || []} />
-          </Container>
-        </LandingSection>
-      </Layout>
-    )
-  }
+
+export default function BlogTags(props)  {
+  const posts = _.get(props, "data.allMarkdownRemark.edges")
+  return (
+    <Layout>
+      <LandingSection height={800} top={100} bottom={40}>
+        <Container fluid="sm">
+          <PostList posts={posts || []} />
+        </Container>
+      </LandingSection>
+    </Layout>
+  )
 }
+
 export const pageQuery = graphql`
-  query($tag: String) {
+  query($tag: String, $locale: String) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: { frontmatter: { tags: { in: [$tag] }, lan: {eq: $locale} } }
     ) {
       totalCount
       edges {

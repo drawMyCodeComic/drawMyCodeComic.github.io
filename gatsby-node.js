@@ -27,6 +27,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     tags
+                    lan
                   }
                 }
               }
@@ -54,6 +55,7 @@ exports.createPages = ({ graphql, actions }) => {
               slug: post.node.fields.slug,
               previous,
               next,
+              locale: post.node.frontmatter.lan
             },
           })
         })
@@ -73,6 +75,7 @@ exports.createPages = ({ graphql, actions }) => {
             component: blogTags,
             context: {
               tag,
+              locale: post.node.frontmatter.lan
             },
           })
         })

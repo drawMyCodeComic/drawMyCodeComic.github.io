@@ -3,6 +3,8 @@ import styled from "styled-components"
 import Logo from "../../icons/drawmyCodeLogo.svg"
 import { Text } from "../Text/Text"
 import { Row, Col, Collapse } from "reactstrap"
+import { FormattedMessage } from "react-intl"
+
 
 const Wrapper = styled.div`
   .separation-left {
@@ -16,40 +18,33 @@ const Wrapper = styled.div`
 `
 const LogoBig = require("../../images/logoBig.svg")
 
-export const AboutDMC = props => (
-  <Wrapper>
-    <Row>
-      <Col md={5}>
-        <Collapse isOpen={!props.isMobile}>
-          <Logo className="logo" />
-        </Collapse>
-        <Collapse isOpen={props.isMobile}>
-          <img
-            className="logo"
-            src={LogoBig}
-            width={800}
-            alt="Draw my codDraw my code"
-          />
-        </Collapse>
-      </Col>
-      <Col className="separation-left">
-        <Text size="md" bottom={60} align="justify">
-          The draw my code is a web comic created by @erifranckn where you can
-          find histories related with the programmer life and experiences, here
-          you can learn about technical things or just get fun about this
-          Wonderful job.
-        </Text>
+export const AboutDMC = props => {
+  return  (
+    <Wrapper>
+      <Row>
+        <Col md={5}>
+          <Collapse isOpen={!props.isMobile}>
+            <Logo className="logo" />
+          </Collapse>
+          <Collapse isOpen={props.isMobile}>
+            <img
+              className="logo"
+              src={LogoBig}
+              width={800}
+              alt="Draw my codDraw my code"
+            />
+          </Collapse>
+        </Col>
+        <Col className="separation-left">
+          <Text size="md" bottom={60} align="justify">
+            <FormattedMessage id="about.description" />
+          </Text>
 
-        <Text size="md" align="justify">
-          Enjoy this webcomic and if you want to tell me your own history please
-          write to this email
-          <Text size="md" color="darkgreen" isBlock={false}>
-            {" "}
-            erifranckjose@gmail.com{" "}
-          </Text>{" "}
-          i want to read it.
-        </Text>
-      </Col>
-    </Row>
-  </Wrapper>
-)
+          <Text size="md" align="justify">
+            <FormattedMessage id="about.enjoy" />
+          </Text>
+        </Col>
+      </Row>
+    </Wrapper>
+  )
+}
