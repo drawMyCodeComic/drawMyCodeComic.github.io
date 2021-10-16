@@ -1,6 +1,6 @@
 export const theme = {
   font: {
-    family: "Ramesant",
+    family: "Tahoma",
     size: {
       xs: "14px",
       sm: "18px",

@@ -7,7 +7,7 @@ import { Container } from "reactstrap"
 import _ from "lodash"
 
 
-export default function BlogTags(props)  {
+export default function BlogTags(props) {
   const posts = _.get(props, "data.allMarkdownRemark.edges")
   return (
     <Layout>

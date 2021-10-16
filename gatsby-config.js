@@ -206,5 +206,8 @@ module.exports = {
         defaultLocale: `./src/i18n/react-intl/es.json`,
       },
     },
+    {
+      resolve: `gatsby-plugin-typescript`,
+    },
   ],
 }

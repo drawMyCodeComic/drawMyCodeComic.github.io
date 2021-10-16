@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout/Layout"
 import { Post } from "../components/Post/Post"
 import SEO from "../components/Seo/seo"
-import { LandingSection } from "../components/LandingSection/LandingSection"
 import { ContentNavigator } from "../components/ContentNavigator/ContentNavigator"
 import { Container } from "reactstrap"
 import _ from "lodash"
@@ -16,19 +15,17 @@ class BlogPostTemplate extends React.Component {
       "frontmatter.featuredImage.childImageSharp.fluid.base64"
     )
     return (
-      <Layout removeNavBar>
-        <LandingSection height={800} top={100} bottom={100}>
-          <SEO
-            image={image}
-            title={post.frontmatter.title}
-            description={post.frontmatter.spoiler}
-            slug={post.fields.slug}
-          />
-          <Container fluid="sm">
-            <Post post={post} bottom={40} />
-            <ContentNavigator {...this.props.pageContext} />
-          </Container>
-        </LandingSection>
+      <Layout>
+        <SEO
+          image={image}
+          title={post.frontmatter.title}
+          description={post.frontmatter.spoiler}
+          slug={post.fields.slug}
+        />
+        <Container fluid="sm">
+          <Post post={post} bottom={40} />
+          <ContentNavigator {...this.props.pageContext} />
+        </Container>
       </Layout>
     )
   }

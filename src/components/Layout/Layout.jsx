@@ -9,15 +9,17 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "../Header/Header"
-import { Footer } from "../Footer/Footer"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { theme } from "../../constants/theme"
+import { Corner } from "./Corner"
+import { ChakraProvider, Box } from "@chakra-ui/react"
+import { Header } from "../Navigation/Header"
+
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: Ramesant;
-    src: url(${require("../../fonts/Ramesant.otf")});
+    font-family: Tahoma;
+    src: url(${require("../../fonts/Tahoma_regular.ttf")});
   }
   * {
     font-family: ${({ theme }) => theme.font.family};
@@ -36,12 +38,19 @@ const Layout = ({ children, fluid, removeNavBar }) => {
   `)
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Header fluid={fluid} removeNavBar={removeNavBar} />
-      <main>{children}</main>
-      <Footer />
-    </ThemeProvider>
+    <ChakraProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <main>
+          <Box position="relative" overflow="hidden" h="100vh" w="100vw">
+            <Corner />
+            <Header />
+            {children}
+            <Corner position="bottom" />
+          </Box>
+        </main>
+      </ThemeProvider>
+    </ChakraProvider>
   )
 }
 
