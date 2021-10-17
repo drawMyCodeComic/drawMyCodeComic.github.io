@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "../Link/Link"
-import { Title, Text } from "../Text/Text"
 import { Row, Col } from "reactstrap"
+import { Box, Flex, Text, Image } from "@chakra-ui/react"
 
 export const Article = styled.div`
   margin-bottom: ${({ bottom }) => bottom || 10}px;
@@ -10,9 +10,6 @@ export const Article = styled.div`
     max-width: 800px;
     display: block;
     margin: auto;
-  }
-  img {
-    max-width: 100%;
   }
   .tags {
     float: right;
@@ -25,8 +22,17 @@ export const Article = styled.div`
 export const Post = ({ post, bottom }) => {
   return (
     <Article bottom={bottom}>
-      <Title>{post.frontmatter.title}</Title>
-      <article dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Text fontSize="24px" textAlign="center">
+        {post.frontmatter.title}
+      </Text>
+      <Box>
+        <Image
+          src={post.frontmatter?.image?.publicURL}
+          h="70vh"
+          m="auto"
+          d="block"
+        />
+      </Box>
       <div className="information">
         <Row>
           <Col>

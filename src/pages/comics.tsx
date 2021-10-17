@@ -47,7 +47,7 @@ export default InphograficPage
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: { internal: {}, frontmatter: { type: { eq: "infographic" } } }
+      filter: { internal: {}, frontmatter: { type: { eq: "comic" } } }
     ) {
       edges {
         node {

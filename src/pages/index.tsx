@@ -6,6 +6,7 @@ import _ from "lodash"
 import { Card } from "../components/Card/Card"
 import SEO from "../components/Seo/seo"
 import Layout from "../components/Layout/Layout"
+import GatsbyLink from "gatsby-link"
 
 const erifranckGuapo = require("../images/assets/erifranck_guapo.png")
 const sections = [
@@ -13,11 +14,13 @@ const sections = [
     title: "Web Comic",
     img: require("../images/assets/comic_presentation.png"),
     actionLabel: "leer",
+    path: "/comics",
   },
   {
     title: "Infografias",
     img: require("../images/assets/inphografic_presentation.png"),
     actionLabel: "leer",
+    path: "/inphografics",
   },
 ]
 const IndexPage: React.FC<PageProps> = props => {
@@ -35,14 +38,15 @@ const IndexPage: React.FC<PageProps> = props => {
       />
       <Flex justifyContent="flex-end" w="calc(100% - 300px)" m="auto" mt="60px">
         {sections.map(section => (
-          <Box ml="100px" key={section.title}>
-            <Card
-              title={section.title}
-              image={section.img}
-              actionLabel={section.actionLabel}
-              handleClick={() => props.navigate("inphografics/")}
-            />
-          </Box>
+          <GatsbyLink to={section.path}>
+            <Box ml="100px" key={section.title}>
+              <Card
+                title={section.title}
+                image={section.img}
+                actionLabel={section.actionLabel}
+              />
+            </Box>
+          </GatsbyLink>
         ))}
       </Flex>
     </Layout>

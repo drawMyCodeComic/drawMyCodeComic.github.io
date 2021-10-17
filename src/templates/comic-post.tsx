@@ -50,7 +50,17 @@ export const pageQuery = graphql`
         spoiler
         path
         tags
-        featuredImage {
+        thumbnailThin {
+          absolutePath
+          publicURL
+        }
+        thumbnail {
+          absolutePath
+          publicURL
+        }
+        image {
+          absolutePath
+          publicURL
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
