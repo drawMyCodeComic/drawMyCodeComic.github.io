@@ -6,6 +6,7 @@ featuredImage: ../../images/dmc-episode5-cover.png
 spoiler: When you have your technical test and after you start working on.
 tags: ["webcomic", "coding", "free time"]
 lan: "en"
+type: "inphografic"
 ---
 
 ![Comic 5](../../images/dmc-episode-5.png)

@@ -6,6 +6,7 @@ featuredImage: ../../images/dmc-episode4-cover.png
 spoiler: When you have your technical test and after you start working on.
 tags: ["webcomic", "interview", "test"]
 lan: "en"
+type: "comic"
 ---
 
 ![Comic 1](../../images/dmc-episode-4.png)

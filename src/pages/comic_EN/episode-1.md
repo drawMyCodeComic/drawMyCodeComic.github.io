@@ -6,6 +6,7 @@ featuredImage: ../../images/dmc-episode1-cover.png
 spoiler: How we start learning programming
 tags: ["webcomic", "learning", "javascript"]
 lan: "en"
+type: "comic"
 ---
 
 ![Comic 1](../../images/dmc-episode-1.png)
