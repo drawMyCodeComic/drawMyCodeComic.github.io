@@ -75,7 +75,7 @@ exports.createPages = ({ graphql, actions }) => {
             component: blogTags,
             context: {
               tag,
-              locale: post.node.frontmatter.lan
+              locale: tag.node.frontmatter.lan
             },
           })
         })
