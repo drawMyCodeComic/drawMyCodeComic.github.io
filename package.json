@@ -33,7 +33,7 @@
     "gatsby-theme-i18n": "^2.0.0",
     "gatsby-theme-i18n-react-intl": "^2.0.0",
     "gatsby-transformer-json": "^2.2.27",
-    "gatsby-transformer-remark": "^2.6.58",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.13",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
